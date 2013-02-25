@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS3 Tie Fighter CSS3 - Reinaldo Ferraz</title>
+		<script src="prefixfree.min.js"></script>
+		<style>
+/*--------------General elements----------------*/			
+
+body{
+	background: radial-gradient (rgb(80,80,80),black);
+	font-family:verdana;
+	color: white;
+	height: 1000px;
+	overflow: hidden;
+	animation:space 50s infinite linear alternate;
+}
+
+
+h1{
+	position:absolute;
+	top:10px;
+	right: 30px;	
+}
+
+a{	
+	position:absolute;
+	top:0px;
+	right: 0px;
+	color:white;	
+	padding:5px 30px 5px 100%;
+	white-space: nowrap;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+a:hover:after,
+a:focus:after{
+	background:white;
+	color: black;	
+	content:"http://twitter.com/reinaldoferraz";
+	
+}
+
+a:hover,
+a:focus{
+	background:white;
+	color: white;	
+}
+
+
+
+/*--------------background animation----------------*/
+
+@keyframes space {
+  from {
+	background: rgb(40,40,40);
+  }
+   
+
+  to {
+	background: rgb(10,10,10);
+  }
+}
+
+
+
+/*--------------Tie Fighters Animation----------------*/	
+
+@keyframes flying {
+  from {
+	left:500px;
+	top: 0px;
+	transform: scale(0,0);
+  }
+    30% {
+	left:800px;
+	top: 300px;
+	
+  }
+  to {
+	left:200px;
+	top: 100px;
+	transform: scale(1,1);
+  }
+}
+
+@keyframes flying2 {
+  from {
+	left:1000px;
+	top: 200px;
+	transform: scale(0,0);
+  }
+   
+  to {
+	left:-1000px;
+	top: 600px;
+	transform: scale(1,1);
+  }
+}
+
+
+
+
+/*--------------Tie Fighter----------------*/			
+.tie{
+	position: absolute;
+	left:200px;
+	top:100px;
+	animation:flying 4s 1;
+	position:absolute;
+	transition: 0.5s;
+	z-index:4;
+}	
+
+.tie2{
+	position: absolute;
+	left:200px;
+	top:100px;
+	animation:flying2 5s infinite;
+	position:absolute;
+	transition: 0.5s;
+	z-index:4;
+}	
+		
+/*--------------wings----------------*/		
+.left-wing,
+.right-wing{
+	position: absolute;
+	transform: perspective( 600px ) rotateY( 45deg );
+}		
+
+.right-wing{
+	left: 200px;	
+}
+		
+.left-wing div,
+.right-wing div{
+	position: absolute;
+}
+/*--------------Dark part of the wings----------------*/
+.w1, .w2, .w3{
+	width:174px;
+	height: 300px;
+	border:2px 0px solid gray;
+	background: linear-gradient(60deg, transparent 48%,#2c2c2c 50%,transparent 52%), 
+				linear-gradient(-60deg, transparent 48%,#2c2c2c 50%,transparent 52%), 
+				linear-gradient(top, transparent 48%,#2c2c2c 50%,transparent 52%), 
+				black;
+}
+
+div.w1{
+	transform:rotate(0deg);
+}
+
+div.w2{
+	transform:rotate(60deg);
+}	
+
+div.w3{
+	transform:rotate(120deg);
+}	
+	
+.int-l{
+	position: absolute;
+	top:110px;
+	left:65px;
+}
+
+/*--------------Small gray parts of the wings----------------*/
+.s1, .s2, .s3{
+	width:45px;
+	height:78px;
+	background-color:gray;
+	border:0px;
+}
+.s1{
+	transform:rotate(0deg);
+}
+
+.s2{
+	transform:rotate(60deg);
+}	
+
+.s3{
+	transform:rotate(120deg);
+}
+
+
+
+/*--------------Main Cylinder----------------*/
+
+.cylinder-left{
+	position: absolute;
+	top: 116px;
+	left: 3px;
+	height: 50px;
+	width: 200px;
+	border-radius:100px;
+	background:linear-gradient(top, rgba(19,19,19,1) 0%,rgba(132,132,132,1) 51%,rgba(19,19,19,1) 100%), silver;
+	transform: perspective( 600px ) rotateY( -45deg );
+}
+/*--------------Main sphere----------------*/
+.main{
+	position: absolute;
+	top: 100px;
+	left: 40px;
+	height: 100px;
+	width: 130px;
+	border-radius:100px;
+	transform: perspective( 600px ) rotateY( -45deg );
+	background: radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,rgba(79,79,79,1) 50%,rgba(68,68,68,1) 53%,rgba(0,0,0,1) 100%);
+	background-position:100px 100px;
+}
+/*--------------Sphere window----------------*/
+.glass{
+	position: absolute;
+	z-index:3;
+	top: 20px;
+	left: 0px;
+	height: 60px;
+	width: 80px;
+	border-radius:100px;
+	background: linear-gradient(top, transparent 48%,#2c2c2c 50%,#2c2c2c 52%,transparent 53%),
+			linear-gradient(60deg, transparent 48%,#2c2c2c 50%,#2c2c2c 52%,transparent 53%),
+			linear-gradient(-60deg, transparent 48%,#2c2c2c 50%,#2c2c2c 52%,transparent 53%),
+			black;
+	transform: perspective( 600px ) rotateY( 45deg );
+}
+/*--------------Dark glass----------------*/
+.g1, .g2, .g3{
+	position: absolute;
+	top: 20px;
+	left: 33px;
+	width:9px;
+	height:18px;
+	background-color:black;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+
+.g1{
+	transform:rotate(0deg);
+}
+
+.g2{
+	transform:rotate(60deg);
+}
+
+.g3{
+	transform:rotate(120deg);
+}
+/*-------------shoot------------*/
+.shoot1, .shoot2{
+	position:absolute;
+	top:90px;
+	height:5px;
+	width:5px;
+	background-color:red;
+	animation:shooting 1s infinite linear;
+	box-shadow: 2px 2px 2px orange;
+}
+
+.shoot1{
+	left:20px;
+}
+
+.shoot2{
+	left:50px;
+}
+/*--------------Shooting animation ----------------*/
+@keyframes shooting {
+from {
+	top:90px;
+	whdth:35px;
+  }
+  
+to {
+	top:400px;
+	whdth:35px;
+	left: -2000px;
+  }
+}
+/*-------------Planets------------*/
+.planet1{
+	position:fixed;
+	z-index:3;
+	top:400px;
+	right:-100px;
+	height:500px;
+	width:500px;
+	background:radial-gradient(center, ellipse cover, rgba(213,206,166,1) 0%,rgba(183,173,112,1) 100%);
+	box-shadow:0px 0px 70px yellow;
+	border-radius:500px;
+
+}
+
+.planet2{
+	position:absolute;
+	z-index:3;
+	top:130px;
+	right:200px;
+	height:60px;
+	width:60px;
+	background:radial-gradient(center, ellipse cover, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%);
+	box-shadow:0px 0px 20px yellow;
+	border-radius:100px;
+	
+}
+
+.planet2:hover,
+.planet3:hover{
+	box-shadow:0px 0px 40px yellow;
+	transition: 0.5s;
+}
+
+.planet1:hover{
+	box-shadow:0px 0px 90px yellow;
+	transition: 0.5s;
+}
+
+.planet3{
+	position:absolute;
+	z-index:3;
+	top:200px;
+	right:140px;
+	height:60px;
+	width:60px;
+	background:radial-gradient(center, ellipse cover, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 100%);
+	box-shadow:0px 0px 20px yellow;
+	border-radius:100px;
+}
+.planets{
+	position:absolute;
+	animation:allplanets 50s infinite linear alternate;
+	height:100px;
+}
+
+/*--------------planets animation----------------*/
+
+@keyframes allplanets {
+  from {
+	top:40px;
+	right:100px
+  }
+   
+
+  to {
+	top:300px;
+	right: 0px;
+  }
+}
+		</style>
+    </head>
+    <body>
+
+<h1>CSS3 Tie Fighter</h1>
+<a href="http://twitter.com/reinaldoferraz/">Reinaldo Ferraz</a>
+
+
+
+
+<!-- Start tie fighter2 -->
+<div class="tie2">
+<!-- left wing -->
+<div class="left-wing">
+		<div class="w1"></div>
+		<div class="w2"></div>
+		<div class="w3">
+				<div class="int-l">
+					<div class="s1"></div>
+					<div class="s2"></div>
+					<div class="s3"></div>
+				</div>
+		</div>
+</div>
+<!-- main -->
+<div class="cylinder-left"></div>
+<div class="main">
+	<div class="glass">
+					<div class="g1"></div>
+					<div class="g2"></div>
+					<div class="g3"></div>
+	</div>
+	<div class="shoot1"></div>
+	<div class="shoot2"></div>
+</div>
+
+<!-- right wing -->
+<div class="right-wing">
+		<div class="w1"></div>
+		<div class="w2"></div>
+		<div class="w3">
+				<div class="int-l">
+					<div class="s1"></div>
+					<div class="s2"></div>
+					<div class="s3"></div>
+				</div>
+		</div>
+</div>
+
+</div>
+
+<!-- end tie fighter2 -->
+
+
+
+<!-- Start  main tie fighter -->
+<div class="tie">
+<!-- left wing -->
+<div class="left-wing">
+		<div class="w1"></div>
+		<div class="w2"></div>
+		<div class="w3">
+				<div class="int-l">
+					<div class="s1"></div>
+					<div class="s2"></div>
+					<div class="s3"></div>
+				</div>
+		</div>
+</div>
+<!-- main -->
+<div class="cylinder-left"></div>
+<div class="main">
+	<div class="glass">
+					<div class="g1"></div>
+					<div class="g2"></div>
+					<div class="g3"></div>
+	</div>
+	<div class="shoot1"></div>
+	<div class="shoot2"></div>
+</div>
+
+<!-- right wing -->
+<div class="right-wing">
+		<div class="w1"></div>
+		<div class="w2"></div>
+		<div class="w3">
+				<div class="int-l">
+					<div class="s1"></div>
+					<div class="s2"></div>
+					<div class="s3"></div>
+				</div>
+		</div>
+</div>
+
+</div>
+<!-- end main tie fighter -->
+
+<div class="planets">
+	<div class="planet2"></div>
+	<div class="planet3"></div>
+</div>
+<div class="planet1"></div>
+
+<!-- para a versao 2 http://www.css3shapes.com/ -->
+	</body>
+</html>
