@@ -4,8 +4,6 @@
         <meta charset="utf-8">
 	<meta name="description" content="A Tie Fighter created using pure CSS3">
         <title>CSS3 Tie Fighter CSS3 - Reinaldo Ferraz</title>
-	<script src="prefixfree.min.js"></script>
-	<!-- Using Prefix Free for productivity (no -moz and -webkit prefix used) --> 
 <style>
 /*--------------General elements----------------*/			
 
@@ -146,10 +144,9 @@ a.tweet:focus{
 	width:174px;
 	height: 300px;
 	border:2px 0px solid gray;
-	background: linear-gradient(60deg, transparent 48%,#2c2c2c 50%,transparent 52%), 
+	background: linear-gradient(60deg, transparent 48%, #2c2c2c 50%, transparent 52%), 
 				linear-gradient(-60deg, transparent 48%,#2c2c2c 50%,transparent 52%), 
-				linear-gradient(top, transparent 48%,#2c2c2c 50%,transparent 52%), 
-				black;
+				linear-gradient(0deg, transparent 48%,#2c2c2c 50%,transparent 52%), black;
 }
 
 div.w1{
@@ -200,7 +197,7 @@ div.w3{
 	height: 50px;
 	width: 200px;
 	border-radius:100px;
-	background:linear-gradient(top, rgba(19,19,19,1) 0%,rgba(132,132,132,1) 51%,rgba(19,19,19,1) 100%), silver;
+	background:linear-gradient(0deg, rgba(19,19,19,1) 0%,rgba(132,132,132,1) 51%,rgba(19,19,19,1) 100%), silver;
 	transform: perspective( 600px ) rotateY( -45deg );
 }
 /*--------------Main sphere----------------*/
@@ -212,7 +209,7 @@ div.w3{
 	width: 130px;
 	border-radius:100px;
 	transform: perspective( 600px ) rotateY( -45deg );
-	background: radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,rgba(79,79,79,1) 50%,rgba(68,68,68,1) 53%,rgba(0,0,0,1) 100%);
+	background: radial-gradient(ellipse, rgba(0,0,0,1) 0%,rgba(79,79,79,1) 50%,rgba(68,68,68,1) 53%,rgba(0,0,0,1) 100%);
 	background-position:100px 100px;
 }
 /*--------------Sphere window----------------*/
@@ -224,7 +221,7 @@ div.w3{
 	height: 60px;
 	width: 80px;
 	border-radius:100px;
-	background: linear-gradient(top, transparent 48%,#2c2c2c 50%,#2c2c2c 52%,transparent 53%),
+	background: linear-gradient(0deg, transparent 48%,#2c2c2c 50%,#2c2c2c 52%,transparent 53%),
 			linear-gradient(60deg, transparent 48%,#2c2c2c 50%,#2c2c2c 52%,transparent 53%),
 			linear-gradient(-60deg, transparent 48%,#2c2c2c 50%,#2c2c2c 52%,transparent 53%),
 			black;
@@ -292,7 +289,7 @@ to {
 	right:-100px;
 	height:500px;
 	width:500px;
-	background:radial-gradient(center, ellipse cover, rgba(213,206,166,1) 0%,rgba(183,173,112,1) 100%);
+	background:radial-gradient(ellipse, rgba(213,206,166,1) 0%,rgba(183,173,112,1) 100%);
 	box-shadow:0px 0px 70px yellow;
 	border-radius:500px;
 
@@ -305,7 +302,7 @@ to {
 	right:200px;
 	height:60px;
 	width:60px;
-	background:radial-gradient(center, ellipse cover, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%);
+	background:radial-gradient(ellipse, rgba(254,252,234,1) 0%,rgba(241,218,54,1) 100%);
 	box-shadow:0px 0px 20px yellow;
 	border-radius:100px;
 	
@@ -329,7 +326,7 @@ to {
 	right:140px;
 	height:60px;
 	width:60px;
-	background:radial-gradient(center, ellipse cover, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 100%);
+	background:radial-gradient(ellipse, rgba(254,255,232,1) 0%,rgba(214,219,191,1) 100%);
 	box-shadow:0px 0px 20px yellow;
 	border-radius:100px;
 }
